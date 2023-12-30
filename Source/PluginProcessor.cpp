@@ -31,12 +31,12 @@ AmpSimAudioProcessor::~AmpSimAudioProcessor()
 {
 }
 
+
 juce::AudioProcessorValueTreeState::ParameterLayout AmpSimAudioProcessor::createParameterLayout()
 {
     std::vector <std::unique_ptr<juce::RangedAudioParameter>> params;
     
-    
-    params.push_back(std::make_unique<juce::AudioParameterFloat>("inputGainSliderId", "inputGainSliderName", -24.0f, 24.0f, 0.0f));
+    params.push_back(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"inputGainSliderId", 1}, "inputGainSliderName", -24.0f, 24.0f, 0.0f));
     
     return { params.begin(), params.end() };
 }
@@ -168,12 +168,18 @@ void AmpSimAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
+    
+    
+    // Had to comment this loop out for test build because it was throwing error
+    // "unused variable channelData"
+    /*
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
 
         // ..do something to the data...
     }
+    */
 }
 
 //==============================================================================
