@@ -4,6 +4,10 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginManufacturer="McWilliams Audio ">
   <MAINGROUP id="QTs6qC" name="ampSim">
     <GROUP id="{1BDFF371-F1FF-76BD-3A2C-86EB2AE3259B}" name="Source">
+      <GROUP id="{151E1D4D-F6E8-8FAA-557A-A4CC5495786C}" name="Parameters">
+        <FILE id="BwOeEP" name="Globals.cpp" compile="1" resource="0" file="Source/Parameters/Globals.cpp"/>
+        <FILE id="TXHIAf" name="Globals.h" compile="0" resource="0" file="Source/Parameters/Globals.h"/>
+      </GROUP>
       <FILE id="KKQbOb" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="YAxyi9" name="PluginProcessor.h" compile="0" resource="0"
