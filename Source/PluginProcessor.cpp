@@ -13,11 +13,16 @@
 AmpSimAudioProcessor::AmpSimAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
+                    #if ! JucePlugin_IsMidiEffect
+                    #if ! Juce_Plugin_IsSynth
                        .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
+                    #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
+                    #endif
                        )
 
 , mTreeState(*this, nullptr, "PARAMETERS", createParameterLayout())
+
 #endif
 {
 }
