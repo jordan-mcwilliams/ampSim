@@ -31,12 +31,13 @@ AmpSimAudioProcessor::~AmpSimAudioProcessor()
 {
 }
 
-
+// Parameter stuff
 juce::AudioProcessorValueTreeState::ParameterLayout AmpSimAudioProcessor::createParameterLayout()
 {
     std::vector <std::unique_ptr<juce::RangedAudioParameter>> params;
     
-    params.push_back(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"inputGainSliderId", 1}, "inputGainSliderName", -24.0f, 24.0f, 0.0f));
+    params.push_back(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{inputID, 1}, inputName, -24.0f, 24.0f, 0.0f));
+    params.push_back(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{outputID, 1}, outputName, -24.0f, 24.0f, 0.0f));
     
     return { params.begin(), params.end() };
 }
