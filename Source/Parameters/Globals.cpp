@@ -5,7 +5,7 @@
 // extern const juce::String presetID = "presets";
 // extern const juce::String presetName = "Presets";
 
-const juce::String inpurtID = "input";
+const juce::String inputID = "input";
 const juce::String inputName = "Input";
 
 const juce::String outputID = "output";
